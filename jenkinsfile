@@ -39,7 +39,7 @@ pipeline {
             steps{
                 
                     sh 'pwd'
-                    sh 'docker build -t grishako2020/webapp_one:0.2 .'
+                    sh 'docker build -t grishako2020/webapp_one:0.3 .'
                 
             }
         }
@@ -48,7 +48,7 @@ pipeline {
             steps{
                 withDockerRegistry(credentialsId: 'dockerhubtoken', url: 'https://index.docker.io/v1/') {
                     sh '''
-                        docker push grishako2020/webapp_one:0.2
+                        docker push grishako2020/webapp_one:0.3
                     '''
                 }
             }
@@ -57,7 +57,7 @@ pipeline {
         
         stage('Remove local docker images') {
             steps{
-                sh 'docker rmi grishako2020/webapp_one:0.2'
+                sh 'docker rmi grishako2020/webapp_one:0.3'
             }
         }
         
