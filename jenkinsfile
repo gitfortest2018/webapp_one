@@ -1,9 +1,9 @@
 pipeline {
     agent { label 'centos' }
-    
-    environment {
-        dockerhub = credentials('dockerhub')
-    }
+
+    #environment {
+    #    dockerhub = credentials('dockerhub')
+    #}
 
     stages {
         stage('Docker version') {
