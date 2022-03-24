@@ -62,6 +62,7 @@ COPY .docker/nginx-laravel.conf /etc/nginx/http.d/default.conf
 RUN mkdir -p /run/nginx/
 RUN touch /run/nginx/nginx.pid
 
+# Log files setting
 RUN ln -sf /dev/stdout /var/log/nginx/access.log
 RUN ln -sf /dev/stderr /var/log/nginx/error.log
 
